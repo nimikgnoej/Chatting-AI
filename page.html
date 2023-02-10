@@ -5,14 +5,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
     <title>Cyber GF</title>
 </head>
 
 <body>
     <h1 id="title">Chat with your cyber GF based on Chat-GPT!</h1>
-    <div class="chatbox-left">Hello!</div>
-    <div class="chatbox-right">Hello!</div>
-    <input class="text-input" type="text" value="Chat here!" />
+    <div class="main-chat">
+        <div class="line">
+            <div class="chatbox chatbox-left">Hello!</div>
+        </div>
+        <div class="line">
+            <div class="chatbox chatbox-right">Hello!</div>
+        </div>
+    </div>
+    <input class="text-input" type="text" placeholder="Chat here!" />
+    <input class="text-submit" type="submit" value="send" />
+    <script src="./index.js"></script>
 </body>
 
 </html>
