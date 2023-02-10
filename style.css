@@ -1,23 +1,31 @@
+body {
+    height: 80vh;
+}
+
 #title {
     margin: 50px 0px;
     text-align: center;
 }
 
 .line {
-    margin-top: 20px;
+    margin-top: 40px;
     display: flex;
 }
 
 .main-chat {
+    display: flex;
+    overflow-y: scroll;
     width: 90%;
-    height: 80%;
+    height: 100%;
     position: relative;
 }
 
 .chatbox {
-    width: 100px;
-    height: 20px;
-    background-color: bisque;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 20px 0px;
+    max-width: 200px;
+    background: #eee;
     position: absolute;
     padding: 5px;
 }
