@@ -10,18 +10,47 @@
 </head>
 
 <body>
-    <h1 id="title">Chat with your cyber GF based on Chat-GPT!</h1>
+    <h1 id="title">Chat with AI based on Chat-GPT!</h1>
     <div class="main-chat">
-        <div class="line">
-            <div class="chatbox chatbox-left">Hello!</div>
-        </div>
-        <div class="line">
-            <div class="chatbox chatbox-right">Hello!</div>
-        </div>
     </div>
     <input class="text-input" type="text" placeholder="Chat here!" />
     <input class="text-submit" type="submit" value="send" />
-    <script src="./index.js"></script>
+    <script type="module">
+        const send = document.querySelector(".text-submit")
+        const text = document.querySelector(".text-input")
+        const mainboard = document.querySelector(".main-chat")
+        import { Configuration, OpenAIApi } from "https://cdn.skypack.dev/openai";
+
+        const clickSend = () => {
+            const myText = text.value;
+            const template = `<div class="chatbox chatbox-right">${myText}</div>`
+            mainboard.insertAdjacentHTML('beforeend', template);
+            text.value = "";
+
+            const configuration = new Configuration({
+                organization: "org-zeImgnv8EAVoVuLnte5GxkEd",
+                apiKey: "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",
+            });
+            const openai = new OpenAIApi(configuration);
+            openai.createCompletion({
+                model: "text-davinci-003",
+                prompt: myText,
+                max_tokens: 2048,
+                temperature: 0.5,
+                top_p: 1,
+                frequency_penalty: 0,
+                presence_penalty: 0,
+            }).then((result) => {
+                const answer = result.data.choices[0].text;
+                console.log(result);
+                const aiText = `<div class="chatbox chatbox-left">${answer}</div>`
+                mainboard.insertAdjacentHTML('beforeend', aiText);
+            });
+
+        }
+
+        send.addEventListener("click", clickSend);
+    </script>
 </body>
 
 </html>
