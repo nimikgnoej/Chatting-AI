@@ -8,30 +8,26 @@ body {
 }
 
 .line {
-    margin-top: 40px;
+    margin-top: 10px;
     display: flex;
 }
 
 .main-chat {
-    display: flex;
     overflow-y: scroll;
     width: 90%;
-    height: 100%;
-    position: relative;
+    height: 90%;
 }
 
 .chatbox {
-    flex-direction: column;
-    justify-content: space-between;
-    margin: 20px 0px;
+    margin: 10px 0px;
     max-width: 200px;
     background: #eee;
-    position: absolute;
     padding: 5px;
 }
 
 .chatbox-left {
     left: 10px;
+    margin-left: 20px;
 }
 
 .chatbox-right {
@@ -39,13 +35,13 @@ body {
     margin-left: auto;
 }
 
-.text-input {
-    position: absolute;
-    bottom: 20px;
+.submit-form {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
 }
 
-.text-submit {
-    position: absolute;
-    bottom: 20px;
-    left: 160px;
+.text-input {
+    width: 300px;
+    height: 30px;
 }
