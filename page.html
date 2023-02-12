@@ -17,12 +17,13 @@
         <input class="text-input" type="text" placeholder="Chat here!" />
         <input class="text-submit" type="submit" value="Send" />
     </form>
+    <script type="text/javascript" src="apikey.js"></script>
     <script type="module">
         const send = document.querySelector(".text-submit")
         const text = document.querySelector(".text-input")
         const mainboard = document.querySelector(".main-chat")
         const form = document.querySelector(".submit-form")
-        const ApiKey = "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";
+        const ApiKey = config.apikey;
         import { Configuration, OpenAIApi } from "https://cdn.skypack.dev/openai";
 
         const clickSend = (e) => {
@@ -34,7 +35,7 @@
             text.value = "";
 
             const configuration = new Configuration({
-                apiKey: "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",
+                apiKey: ApiKey,
             });
             const openai = new OpenAIApi(configuration);
             openai.createCompletion({
